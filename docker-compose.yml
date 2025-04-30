@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  api:
+    container_name: api-monitor-backend
+    build: ./server
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+
+  frontend:
+    container_name: api-monitor-frontend
+    build: ./frontend
+    ports:
+      - "80:80"
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - api
