@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: frontend
+        working-directory: $GITHUB_WORKSPACE/frontend
     steps:
     - run: npm ci
     - run: npm run build --if-present
